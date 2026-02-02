@@ -1,0 +1,78 @@
+{
+  "permissionPolicy": "ask",
+  "allowedCommands": [
+    "npm install",
+    "npm test",
+    "npm run test:watch",
+    "npm run test:coverage",
+    "npm run lint",
+    "npm run lint:fix",
+    "npm run format",
+    "npm run dev",
+    "npm run agent",
+    "npm run server",
+    "node src/index.js",
+    "node src/agent.js",
+    "node src/server.js",
+    "git status",
+    "git diff",
+    "git add",
+    "git commit",
+    "git push",
+    "git pull",
+    "git log",
+    "ls",
+    "pwd",
+    "cat",
+    "mkdir",
+    "rm",
+    "cp",
+    "mv"
+  ],
+  "allowedPaths": [
+    "src/**",
+    "tests/**",
+    "docs/**",
+    "grafana/**",
+    "logs/**",
+    ".env",
+    ".env.example",
+    "package.json",
+    "package-lock.json",
+    "README.md",
+    "CLAUDE.md",
+    ".gitignore",
+    ".eslintrc.json",
+    ".prettierrc",
+    "jest.config.js"
+  ],
+  "blockedPaths": [
+    "node_modules/**",
+    ".git/**",
+    "coverage/**"
+  ],
+  "autoApprove": {
+    "read": [
+      "src/**/*.js",
+      "tests/**/*.js",
+      "docs/**/*.md",
+      "*.json",
+      "*.md",
+      ".env.example"
+    ],
+    "write": [
+      "src/**/*.js",
+      "tests/**/*.js",
+      "docs/**/*.md",
+      "logs/**/*.log"
+    ],
+    "bash": [
+      "npm test",
+      "npm run lint",
+      "git status",
+      "git diff",
+      "ls",
+      "pwd"
+    ]
+  }
+}

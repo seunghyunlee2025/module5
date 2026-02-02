@@ -1,0 +1,49 @@
+{
+  "name": "system-resource-monitoring",
+  "version": "1.0.0",
+  "description": "시스템 리소스 모니터링 - CPU, 메모리, 디스크, 네트워크 실시간 모니터링",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "agent": "node src/agent.js",
+    "server": "node src/server.js",
+    "dev": "concurrently \"npm run agent\" \"npm run server\"",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "format": "prettier --write \"src/**/*.js\""
+  },
+  "keywords": [
+    "monitoring",
+    "system-metrics",
+    "performance",
+    "observability"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "systeminformation": "^5.21.20",
+    "express": "^4.18.2",
+    "dotenv": "^16.3.1",
+    "@influxdata/influxdb-client": "^1.33.2",
+    "axios": "^1.6.2",
+    "joi": "^17.11.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "eslint": "^8.54.0",
+    "prettier": "^3.1.0",
+    "concurrently": "^8.2.2",
+    "supertest": "^6.3.3"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/index.js"
+    ]
+  }
+}
